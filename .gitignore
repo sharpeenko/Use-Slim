@@ -1,13 +1,17 @@
 # Created by .ignore support plugin (hsz.mobi)
 
 #PHPStorm
-
 .idea
 
 #Composer
-
 vendor
 
 #Logs
-
 /logs/app.log
+
+
+#Apache
+/public/.htaccess
+
+#Environment
+/.env

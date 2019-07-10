@@ -11,3 +11,7 @@ vendor
 #Logs
 
 /logs/app.log
+
+
+# Apache
+/public/.htaccess

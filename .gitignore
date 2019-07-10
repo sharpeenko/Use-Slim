@@ -7,3 +7,7 @@
 #Composer
 
 vendor
+
+#Logs
+
+/logs/app.log

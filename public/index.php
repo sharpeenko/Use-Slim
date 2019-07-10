@@ -5,7 +5,11 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 require '../vendor/autoload.php';
 
-$app = new Slim\App;
+
+// Instantiate the app
+$settings = require __DIR__ . '/../config/settings.php';
+$app = new Slim\App($settings);
+
 $app->get('/hello/{name}', function (Request $request, Response $response) {
     $name = $request->getAttribute('name');
     $response->getBody()->write("Hello, $name");

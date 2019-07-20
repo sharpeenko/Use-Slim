@@ -1,5 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
 
+#netbeans
+
+/nbproject/
+
 #PHPStorm
 .idea
 
@@ -8,15 +12,7 @@ vendor
 
 #Logs
 /logs/app.log
-
-
-#Apache
-/public/.htaccess
-
-#Environment
-/.env
-/logs/access.log
+/nbproject/private/
+/mm/
 /logs/error.log
-/mm/slim.mmd
-/nbproject/project.properties
-/nbproject/project.xml
+/logs/access.log

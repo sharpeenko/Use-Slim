@@ -15,3 +15,8 @@ vendor
 
 #Environment
 /.env
+/logs/access.log
+/logs/error.log
+/mm/slim.mmd
+/nbproject/project.properties
+/nbproject/project.xml

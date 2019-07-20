@@ -14,10 +14,26 @@ require __DIR__ . '/../env.php';
 $settings = require __DIR__ . '/../config/settings.php';
 $app = new Slim\App($settings);
 
-$app->get('/hello', function (Request $request, Response $response) {
-    $name = $_ENV['APP_ENV'];
-    $response->getBody()->write("Hello, $name");
+$app->add(function ($request, $response, $next) {
+    $response->getBody()->write('BEFORE');
+    $response = $next($request, $response);
+    $response->getBody()->write('AFTER');
 
     return $response;
 });
+
+$wm = function ($request, $response, $next) {
+    $response->getBody()->write('BEFORE ROUTE');
+    $response = $next($request, $response);
+    $response->getBody()->write('AFTER ROUTE');
+
+    return $response;
+};
+
+$app->get('/hello/{name}', function (Request $request, Response $response) {
+    $name = $request->getAttribute('name');
+    $response->getBody()->write("Hello, $name");
+
+    return $response;
+})->add($wm);
 $app->run();
